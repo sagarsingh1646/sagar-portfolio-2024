@@ -1,10 +1,37 @@
+import React from 'react';
+import { useAnimation, motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import project_1 from "../assets/project_sample1.jpeg";
 
 function FeaturedWork() {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Trigger when 10% of the component is in view
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1 } }
+  };
+
   return (
-    <div className="bg-white rounded-10xl mt-36">
+    <motion.div 
+      ref={ref} 
+      initial="hidden" 
+      animate={controls} 
+      variants={fadeInUpVariants} 
+      className="bg-white rounded-10xl mt-36"
+    >
       <div className="pl-10 pr-10 md:pl-20 md:pr-20">
-        <div className="pt-10 md:pt-28">
+        <div className="pt-20 md:pt-28">
           <div className="text-3xl md:text-5xl font-semibold">
             <p>Featured Work</p>
           </div>
@@ -58,7 +85,7 @@ function FeaturedWork() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
