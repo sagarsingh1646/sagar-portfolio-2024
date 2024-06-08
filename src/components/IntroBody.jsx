@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import work_icon from "../assets/work-icon.png";
 
@@ -6,8 +5,15 @@ export default function IntroBody() {
   return (
     <div className="bg-neutral-900 h-2/3 pb-20">
       <div className="ml-6 pt-32 md:ml-20">
-        <div className="bg-neutral-800 border border-green-500 rounded-md text-green-500 w-36 md:w-40">
-          <p className="text-xs text-wrap p-1">Open for opportunities</p>
+        <div className="bg-neutral-800 border border-green-500 rounded-md text-green-500 w-36 md:w-40 relative overflow-hidden">
+          <motion.p 
+            className="text-xs text-wrap p-1" 
+            initial={{ opacity: 1 }} 
+            animate={{ opacity: [1, 0.5, 1] }} 
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            Open for opportunities
+          </motion.p>
         </div>
         <div className="w-10/12 mt-2 md:mt-3 md:w-3/5">
           <p className="text-4xl md:text-5xl tracking-base text-white font-epilogue leading-snug font-light md:leading-normal">
@@ -31,5 +37,4 @@ export default function IntroBody() {
       </div>
     </div>
   );
-
 }
