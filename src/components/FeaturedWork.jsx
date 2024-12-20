@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAnimation, motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import project_1 from "../assets/project_sample1.jpeg";
+import project_1 from "/project_sample1.jpeg";
+import project_2 from '/project_2.png'
 
 function FeaturedWork() {
   const controls = useAnimation();
@@ -39,7 +40,7 @@ function FeaturedWork() {
         <div className="pt-10 md:pt-20 px-5 md:px-10 border-b-2 flex flex-col md:flex-row md:justify-between">
           <div className="w-full md:py-14 md:w-5/12 md:pr-5">
             <div className="text-xl md:text-3xl font-semibold">
-              <p>Project title | Short design description</p>
+              <p>Whisperoo | AI powered anonymous message sending platform</p>
             </div>
             <div className="pt-3">
               <p>
@@ -63,12 +64,12 @@ function FeaturedWork() {
         <div className="pt-10 md:pt-20 px-5 md:px-10 flex flex-col md:flex-row md:justify-between">
           <div className="w-full md:py-14 md:w-5/12 md:pr-5">
             <div className="text-xl md:text-3xl font-semibold">
-              <p>Project title | Short design description</p>
+              <p>Genix Auctions | Full Stack bidding platform</p>
             </div>
             <div className="pt-3">
               <p>
-                Creating an end-to-end solution for individuals to access and
-                share healthcare data with caregivers seamlessly.
+                Creating an end-to-end solution for individuals to sell and
+                bid wide range of products.
               </p>
             </div>
             <div className="pt-3">
@@ -81,7 +82,7 @@ function FeaturedWork() {
             </div>
           </div>
           <div className="w-full md:w-96 pt-5 md:pt-0">
-            <img src={project_1} className="w-full" alt="Project Sample 1" />
+            <img src={project_2} className="w-full" alt="Project Sample 1" />
           </div>
         </div>
       </div>

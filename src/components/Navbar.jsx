@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import profilePhoto from "../assets/profile_photo.png";
+import profilePhoto from "/profile_photo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +25,8 @@ const menuVariants = {
     y: -20,
     transition: {
       type: 'spring',
-      stiffness: 400, // Increase stiffness for slower closing
-      damping: 50, // Increase damping for smoother closing
+      stiffness: 400, //for slower closing
+      damping: 50, // for smoother closing
       staggerChildren: 0.2,
       staggerDirection: -1,
     },

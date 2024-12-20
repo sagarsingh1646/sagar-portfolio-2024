@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import work_icon from "../assets/work-icon.png";
+import work_icon from "/work-icon.png";
 
 export default function IntroBody() {
   return (
